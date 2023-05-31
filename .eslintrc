@@ -1,0 +1,32 @@
+{
+    "root": true,
+    "env": {
+      "browser": true, // Enables browser globals like window and document
+      "amd": true, // Enables require() and define() as global variables as per the amd spec.
+      "node": true // Enables Node.js global variables and Node.js scoping.
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "no-duplicate-imports": 2,
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        },
+        {
+          "usePrettierrc": true
+        }
+      ] // Use our .prettierrc file as source
+    },
+    "plugins": [
+      "prettier"
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "extends":"./node_modules/@tsconfig/recommended/tsconfig.json",
+    "exclude":[
+      "node_modules",
+      "dist"
+    ],
+    "compilerOptions":{
+      "skipLibCheck":true,
+      "forceConsistentCasingInFileNames":true,
+      "target":"esnext",
+      "module":"esnext",
+
+      "esModuleInterop":true,
+      "allowJs":true,
+      "declaration":true,
+      "moduleResolution":"node",
+      "strict":true,
+      "strictPropertyInitialization":false,
+      "noEmitOnError":true,
+      "outDir":"./dist",
+      "baseUrl":"./",
+      "rootDirs":[
+        "./src"
+      ],
+      "paths":{
+        "@src/*":[
+          "./src/*"
+        ],
+        "@services/*":[
+          "./src/api/services/*"
+        ],
+        "@routes/*":[
+          "./src/api/routes/*"
+        ]
+      }
+    }
+  }

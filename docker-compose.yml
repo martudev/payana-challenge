@@ -1,0 +1,28 @@
+services:
+  api:
+    container_name: payana_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - HOST=0.0.0.0
+      - REDIS_HOST=payana_redis
+    ports:
+      - "3000:3000"
+    networks:
+      - my-net
+  redis:
+    container_name: payana_redis
+    build:
+      context: .
+      dockerfile: Dockerfile.redis
+    ports:
+      - "6379:6379"
+    networks:
+       - my-net
+
+
+networks:
+  my-net:
+    name: payana_net
+    driver: bridge
