@@ -19,6 +19,45 @@ Then we can connect using Postman or curl to the endpoint `localhost:3000`
 curl --location 'http://localhost:3000/live'
 ```
 
+### How to remove
+
+If you want to remove all the things created using docker compose, you have to run this command
+
+```sh
+docker compose down
+```
+
+And you must see some logs like this
+
+```sh
+[+] Running 3/0
+ ✔ Container payana_api    Removed
+ ✔ Container payana_redis  Removed
+ ✔ Network payana_net      Removed
+ ```
+
+ **`NOTE: This command only removes Containers and Network, if you want to remove the images or volumes you have to removed manually`**
+
+#### How to remove the images and volumes
+
+First of all we have to follow the [How to remove](#how-to-remove). Once this is done, we have to list all the images, so we have to run this command and gets `IMAGE ID`
+
+```sh
+docker images
+```
+
+Once we have the image id, we can remove the images we want with this command
+
+```sh
+docker rmi <image-id-1> <image-id-2> ...
+```
+
+Now we have to remove the volumes, to do this we can run this command that removes all the volumes that are not used by any container
+
+```sh
+docker volume prune
+```
+
 ## How to run without Docker
 ### Pre-Requirements
 
@@ -36,7 +75,7 @@ npm install
 Then we need to generate a build so we run this command
 
 ```sh
-npm run build
+npm run build && npm run build:final
 ```
 
 Now we can start the server
@@ -45,7 +84,7 @@ Now we can start the server
 npm start
 ```
 
-Also you can run the server running this command
+Also if you don't want to run the build and then the start, you can run this command
 
 ```sh
 npm run dev
