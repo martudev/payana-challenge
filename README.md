@@ -70,3 +70,9 @@ With this endpoint you can know if the server is alive or not
 With this endpoint you can view some metrics like **Total user CPU time spent in seconds**, **Resident memory size in bytes** and others
 
 `http://localhost:3000/metrics`
+
+## Code Documentation (NEW)
+
+I like to be innovative in terms of documentation and for that I like to use Swimm, which is a platform where you can document the code and explain it, it has to make diagrams, etc. I think it is a good option to explain how your application works.
+In my case I did a demonstration of how it works with the **index.ts** file. In order to see it, this [extension](https://marketplace.visualstudio.com/items?itemName=Swimm.swimm) must be installed in your vscode.
+Once is installed you need to click the Swimm button on the left side panel and then search for `REPO DOCS`, there you have a file called `How the app starts` open it and enjoy!
