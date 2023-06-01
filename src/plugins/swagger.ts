@@ -22,18 +22,6 @@ fastify.register(swaggerPlugin, {
 			{ name: 'company', description: 'Company related end-points' },
 			{ name: 'invoice', description: 'Invoice related end-points' },
 		],
-		definitions: {
-			User: {
-				type: 'object',
-				required: ['id', 'email'],
-				properties: {
-					id: { type: 'string', format: 'uuid' },
-					firstName: { type: 'string' },
-					lastName: { type: 'string' },
-					email: { type: 'string', format: 'email' },
-				},
-			},
-		},
 	},
 });
 
